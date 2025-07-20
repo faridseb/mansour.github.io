@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
-/* :root{
+:root{
     --body-color: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
 
@@ -16,9 +16,9 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-} */
+}
 
-:root{
+/* :root{
     --body-color: rgb(250, 250, 250);
     --color-white: rgb(255, 255, 255);
 
@@ -32,7 +32,7 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-}
+} */
 
 /* ----- BASE ----- */
 *{
@@ -676,9 +676,17 @@ footer{
     .featured-text{
         padding: 0;
     }
+    .featured-name{
+    font-size: 20px;
+    
+    }
     .image, .image img{
         width: 320px;
         height: 320px;
+    }
+
+    .scroll-icon-box{
+        display: none;
     }
 }
 
@@ -689,6 +697,13 @@ footer{
     
     margin: auto;
 }
+    .featured-name{
+    font-size: 20px;
+    
+    }
+    .scroll-icon-box{
+        display: none;
+    }
     .nav-button{
         display: none;
     }
@@ -782,9 +797,14 @@ footer{
     
     margin: auto;
 }
-    .featured-name{
-        font-size: 40px;
+.scroll-icon-box{
+        display: none;
     }
+    .featured-name{
+    font-size: 20px;
+    
+    }
+    
     .project-box{
         width: 100%;
     }

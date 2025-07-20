@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
-:root{
+/* :root{
     --body-color: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
 
@@ -16,9 +16,9 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-}
+} */
 
-/* :root{
+:root{
     --body-color: rgb(250, 250, 250);
     --color-white: rgb(255, 255, 255);
 
@@ -32,7 +32,7 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-} */
+}
 
 /* ----- BASE ----- */
 *{
@@ -673,6 +673,10 @@ footer{
     
     margin: auto;
 }
+
+.form-inputs input{
+    width: 100%;
+}
     .featured-text{
         padding: 0;
     }
@@ -696,6 +700,10 @@ footer{
     width: 100%;
     
     margin: auto;
+}
+
+.form-inputs input{
+    width: 100%;
 }
     .featured-name{
     font-size: 20px;
@@ -796,6 +804,10 @@ footer{
     width: 100%;
     
     margin: auto;
+}
+
+.form-inputs input{
+    width: 100%;
 }
 .scroll-icon-box{
         display: none;

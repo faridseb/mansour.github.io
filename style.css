@@ -95,7 +95,7 @@ body{
 
 }
 .container{
-    width: 90%;
+    width: 100%;
     position: relative;
     margin: auto;
 }
@@ -170,6 +170,7 @@ nav{
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
     padding-inline: 10vw;
+    margin: auto;
 }
 
 /* ----- FEATURED BOX ----- */
@@ -194,12 +195,12 @@ nav{
 .featured-text-card span{
     background: var(--third-color);
     color: var(--color-white);
-    padding: 3px 8px;
+    padding: 3px 12px;
     font-size: 12px;
     border-radius: 5px;
 }
 .featured-name{
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 600;
     color: var(--text-color-second);
     margin-block: 30px;
@@ -236,11 +237,13 @@ nav{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 5px 0px rgba(241, 241, 241, 0.25);
     cursor: pointer;
+    color: white;
 }
 .icon:hover{
     color: var(--first-color);
+    transition: all ease .5s;
 }
 
 /* ----- FEATURED IMAGE BOX ----- */
@@ -406,7 +409,7 @@ h3{
     font-size: 15px;
     color: #777;
 }
-.project-box::after, .contact-info::after{
+.project-box::after, .contact-info::after {
     content: "";
     position: absolute;
     bottom: -100%;
@@ -422,7 +425,8 @@ h3{
 }
 .project-box:hover.project-box i,
 .project-box:hover.project-box>h3,
-.project-box:hover.project-box>label{
+.project-box:hover.project-box>label
+{
     color: var(--color-white);
     z-index: 2;
 }
@@ -575,6 +579,7 @@ h3{
     gap: 10px;
     width: 100%;
     margin-left: 1px;
+    
 
 }
 .input-field{
@@ -586,6 +591,7 @@ h3{
     padding-inline: 20px;
     outline: none;
     margin-left: 20px;
+    color: white;
 
 }
 textarea{
@@ -598,6 +604,7 @@ textarea{
     outline: none;
     resize: none;
     margin-left: 20px;
+    color: white;
 }
 .form-button>.btn{
     display: flex;
@@ -652,9 +659,20 @@ footer{
     margin-top: 10px;
 }
 
+#comp .edu-exp-container .edu-exp-box:hover{
+    background-color: var(--text-color-third);
+    transition: all ease .5s;
+    color: white;
+    cursor: pointer;
 
+} 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
+    .container{
+    width: 100%;
+    
+    margin: auto;
+}
     .featured-text{
         padding: 0;
     }
@@ -666,6 +684,11 @@ footer{
 
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
 @media only screen and (max-width: 900px) {
+    .container{
+    width: 100%;
+    
+    margin: auto;
+}
     .nav-button{
         display: none;
     }
@@ -751,6 +774,11 @@ footer{
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
 @media only screen and (max-width: 540px){
+    .container{
+    width: 100%;
+    
+    margin: auto;
+}
     .featured-name{
         font-size: 40px;
     }

@@ -309,7 +309,7 @@
                 </div>
              </div>
            <div class="col">
-                <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" action="https://formsubmit.co/moussamansour3@gmail.com">
                     <div class="form-control">
                         <div class="form-inputs">
                             <input type="text" class="input-field" name="nom" placeholder="Nom" required>
@@ -341,13 +341,16 @@
                     <a href="#home">Home</a>
                 </li>
                 <li class="footer_menu_list">
-                    <a href="#about">About</a>
+                    <a href="#about" class="nav-link">A Propos</a>
                 </li>
                 <li class="footer_menu_list">
-                    <a href="#projects">Projects</a>
+                    <a href="#comp" class="nav-link">Competences</a>
                 </li>
                 <li class="footer_menu_list">
-                    <a href="#contact">Contact</a>
+                    <a href="#Experience" class="nav-link">Experience</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -371,202 +374,8 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="main.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Empêche la soumission normale du formulaire
-
-        const formData = new FormData(contactForm); // Récupère toutes les données du formulaire
-
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Votre message a été envoyé avec succès !');
-                contactForm.reset();
-            } else {
-                alert('Une erreur est survenue lors de l\'envoi du message : ' + data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors de la soumission du formulaire :', error);
-            alert('Impossible d\'envoyer le message pour le moment. Veuillez réessayer.');
-        });
-    });
-});
-    </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> -->
 
-    <script>
-// Pop-up personnalisée
-/*function showPopup(message, isSuccess) {
-    const popup = document.createElement("div");
-    popup.innerText = message;
-    popup.style.position = "fixed";
-    popup.style.top = "20px";
-    popup.style.right = "20px";
-    popup.style.padding = "15px 20px";
-    popup.style.backgroundColor = isSuccess ? "#4caf50" : "#f44336";
-    popup.style.color = "#fff";
-    popup.style.borderRadius = "8px";
-    popup.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-    popup.style.zIndex = "1000";
-    document.body.appendChild(popup);
-    setTimeout(() => {
-        popup.remove();
-    }, 3000);
-}
-
-// Envoi AJAX
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Empêche le rechargement
-
-    const formData = new FormData(this);
-
-    fetch("contact.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-        if (result.trim() === "success") {
-            showPopup("✅ Message envoyé avec succès !", true);
-            this.reset(); // Vide le formulaire
-        } else {
-            showPopup("❌ Erreur lors de l'envoi...", false);
-        }
-    })
-    .catch(() => {
-        showPopup("❌ Problème de connexion.", false);
-    });
-}); */
-
-// Ajout dynamique de projet
-document.getElementById('addProjectForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('projectName').value.trim();
-  const desc = document.getElementById('projectDesc').value.trim();
-  const tags = document.getElementById('projectTags').value.split(',').map(t => t.trim()).filter(Boolean);
-  const git = document.getElementById('projectGit').value.trim();
-  const demo = document.getElementById('projectDemo').value.trim();
-  const imgInput = document.getElementById('projectImg');
-  let imgSrc = "assets/default.png";
-
-  if (imgInput.files && imgInput.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-      imgSrc = ev.target.result;
-      addProjectCard();
-    };
-    reader.readAsDataURL(imgInput.files[0]);
-  } else {
-    addProjectCard();
-  }
-
-  function addProjectCard() {
-    const card = document.createElement('div');
-    card.className = 'project-item';
-    card.innerHTML = `
-      <img src="${imgSrc}" alt="${name}">
-      <div class="project-overlay">
-        <h3>${name}</h3>
-        <div class="project-tags">
-          ${tags.map(tag => `<span>${tag}</span>`).join('')}
-        </div>
-        <p>${desc}</p>
-        <div class="project-links">
-          ${git ? `<a href="${git}" target="_blank" class="project-btn">Voir le code</a>` : ''}
-          ${demo ? `<a href="${demo}" target="_blank" class="project-btn">Voir le projet</a>` : ''}
-        </div>
-      </div>
-    `;
-    document.querySelector('.projects-gallery').appendChild(card);
-    document.getElementById('addProjectForm').reset();
-  }
-});
-
-// Réinitialiser les projets ajoutés dynamiquement
-document.getElementById('resetProjects').addEventListener('click', function() {
-  const gallery = document.querySelector('.projects-gallery');
-  // Sélectionne tous les projets ajoutés dynamiquement (qui ont l'image par défaut)
-  gallery.querySelectorAll('.project-item img[alt="Nouveau projet"]').forEach(item => {
-    item.parentElement.remove();
-  });
-});
-
-// About Me dynamique
-const aboutInfo = document.querySelector('.about-info p');
-const aboutSkills = document.querySelectorAll('.skills-list');
-const defaultBio = aboutInfo.textContent;
-const defaultSkills = [
-  ["HTML","CSS","Bootstrap","JavaScript"],
-  ["PHP","JAVA","Python","C"],
-  ["MySQL"]
-];
-
-// Afficher le formulaire d'édition
-document.getElementById('editAboutBtn').onclick = function() {
-  document.getElementById('aboutEditForm').style.display = 'block';
-  document.getElementById('aboutBioInput').value = aboutInfo.textContent;
-  // Récupère toutes les compétences en une seule ligne
-  let allSkills = [];
-  aboutSkills.forEach(list => {
-    list.querySelectorAll('span').forEach(span => allSkills.push(span.textContent));
-  });
-  document.getElementById('aboutSkillsInput').value = allSkills.join(', ');
-};
-
-// Enregistrer les modifications
-document.getElementById('aboutEditForm').onsubmit = function(e) {
-  e.preventDefault();
-  aboutInfo.textContent = document.getElementById('aboutBioInput').value;
-  const newSkills = document.getElementById('aboutSkillsInput').value.split(',').map(s=>s.trim()).filter(Boolean);
-  // Répartir sur les 3 skills-box
-  let idx = 0;
-  aboutSkills.forEach(list => {
-    list.innerHTML = '';
-    for(let i=0; i<defaultSkills[idx].length && newSkills.length; i++) {
-      list.innerHTML += `<span>${newSkills.shift()}</span>`;
-    }
-    idx++;
-  });
-  document.getElementById('aboutEditForm').style.display = 'none';
-};
-
-// Réinitialiser la bio et les compétences
-document.getElementById('resetAboutBtn').onclick = function() {
-  aboutInfo.textContent = defaultBio;
-  aboutSkills.forEach((list, i) => {
-    list.innerHTML = defaultSkills[i].map(skill => `<span>${skill}</span>`).join('');
-  });
-  document.getElementById('aboutEditForm').style.display = 'none';
-};
-
-
-// Affichage des messages visiteurs via AJAX
-function showAdminMessages() {
-  fetch('admin_messages.php')
-    .then(res => res.json())
-    .then(messages => {
-      let html = `<div style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.25);z-index:999;display:flex;justify-content:center;align-items:center;">
-        <div style="background:#fff;border-radius:12px;padding:2rem;min-width:350px;max-height:80vh;overflow:auto;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
-          <h3 style="color:var(--second-color);text-align:center;">Messages visiteurs</h3>
-          <button onclick="this.parentElement.parentElement.remove()" class="btn" style="background:var(--first-color);color:#fff;float:right;margin-bottom:1rem;">Fermer</button>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><th>Nom</th><th>Email</th><th>Message</th><th>Date</th></tr>
-            ${messages.map(m => `<tr><td>${m.nom}</td><td>${m.email}</td><td>${m.message}</td><td>${m.date_envoi}</td></tr>`).join('')}
-          </table>
-        </div>
-      </div>`;
-      document.body.insertAdjacentHTML('beforeend', html);
-    });
-}
-</script>
 
 
 

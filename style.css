@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
-:root{
+/* :root{
     --body-color: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
 
@@ -16,9 +16,9 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-}
+} */
 
-/* :root{
+:root{
     --body-color: rgb(250, 250, 250);
     --color-white: rgb(255, 255, 255);
 
@@ -32,7 +32,7 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
-} */
+}
 
 /* ----- BASE ----- */
 *{
@@ -553,6 +553,7 @@ h3{
     gap: 10px;
     color: var(--color-white);
     margin-block: 5px;
+    font-size: 15px;
 }
 .contact-info p>i{
     font-size: 18px;
@@ -579,9 +580,8 @@ h3{
     gap: 10px;
     width: 100%;
     margin-left: 1px;
-    
-
 }
+
 .input-field{
     width: 50%;
     height: 55px;
@@ -768,6 +768,9 @@ footer{
         padding: 0.5rem 1rem;
         font-size: 14px;
     }
+    .input-field{
+        width: 100%;
+    }
 
 }
 
@@ -820,6 +823,7 @@ footer{
   background: #fafbfc;
   color: var(--text-color-second);
   resize: none;
+  width: 100%;
 }
 .add-project-form .btn {
   align-self: center;

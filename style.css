@@ -306,7 +306,7 @@ nav{
 }
 .col{
     display: flex;
-    width: 50%;
+    width: 100%;
 }
 
 /* -- ## --- RESUABLE CSS -- ## -- */
@@ -569,7 +569,7 @@ h3{
 }
 
 /* ----- CONTACT FORM ----- */
- .form-control{
+.form-control{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -577,10 +577,10 @@ h3{
 }
 
 .form-inputs{
-    /* display: flex;
+    display: flex;
     gap: 10px;
-    width: 100%;  */
-    /* margin-right: 50px; */
+    width: 100%;  
+    margin-right: 50px;
     
 }
 
@@ -592,7 +592,7 @@ h3{
     border-radius: 10px;
     padding-inline: 20px;
     outline: none;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     color: white;
     margin-top: 10px;
     margin-bottom:10px;
@@ -606,11 +606,10 @@ textarea{
     border-radius: 10px;
     padding: 15px 20px;
     outline: none;
-    resize: none;
-    /* margin-left: 20px; */
+    resize: none; 
+    margin-left: 20px;
     margin-right: 48px;
-
-    color: white;
+    color: white; 
 }
 .form-button>.btn{
     display: flex;
@@ -636,7 +635,7 @@ footer{
     flex-direction: column;
     row-gap: 30px;
     background: #F8F8F8;
-    margin-left: 30px; /* Décale le footer vers la droite */
+    /*margin-left: 130px;  Décale le footer vers la droite */
     padding-block: 40px 60px;
 }
 .top-footer p{
@@ -660,6 +659,7 @@ footer{
     display: flex;
     gap: 30px;   
 }
+
 .bottom-footer{
     font-size: 14px;
     margin-top: 10px;
@@ -680,6 +680,15 @@ footer{
     margin: auto;
 }
 
+.middle-footer .footer-menu{
+    display: none;
+
+}
+
+
+.input-field{
+    width: 50%;
+}
 
     .featured-text{
         padding: 0;
@@ -713,6 +722,11 @@ footer{
 .form-inputs {
     width: 70%;
 }
+
+.input-field{
+    width: 50%;
+}
+
     .featured-name{
     font-size: 20px;
     
@@ -783,6 +797,7 @@ footer{
     .col{
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
     }
     .about-info, .contact-info{
@@ -813,6 +828,12 @@ footer{
     
     margin: auto;
 }
+
+
+.input-field{
+    width: 50%;
+}
+
 
 .form-inputs {
     width: 100%;

@@ -573,21 +573,26 @@ h3{
     /* display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%; */
+   width: 100%; */
 }
 
 .form-inputs{
     /* display: flex;
     gap: 10px;
     width: 100%;  
-    margin-right: 50px;
-     */
+     margin-right: 50px; */
+     
 }
 
 .input-field{
-    /* width: 100%;
-    height: 55px;
-    background: transparent;
+     width: 100%;
+     margin: 10px 0;
+    
+    height: 40px;
+    padding: 10px;
+    outline-color:var(--second-color);
+    /* text-align: center; */
+    /*background: transparent;
     border: 2px solid #AAA;
     border-radius: 10px;
     padding-inline: 20px;
@@ -599,8 +604,14 @@ h3{
 
 }
 textarea{
-    /* width: 96%;
+    /* text-align: center; */
+     width: 100%;
+     margin: 10px 0;
     height: 200px;
+    padding: 10px;
+    outline-color:var(--second-color);
+
+    /*
     background: transparent;
     border: 2px solid #AAA;
     border-radius: 10px;
@@ -614,10 +625,11 @@ textarea{
 .form-button>.btn{
     /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
     background: var(--second-color);
     color: var(--color-white);
-    margin-left: 20px;  ; */
+    width: 100%;
+    /*margin-left: 20px;  ; */
 }
 .form-button>.btn:hover{
     /* background: #00B5E7; */
